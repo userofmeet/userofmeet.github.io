@@ -1,116 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X-CAM | Meet Jain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
 </head>
-
 <body>
 
-    <a href="index.html">← Back to Projects</a>
+    <nav>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">MEET<span>.JAIN</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" class="active">Projects</a></li>
+                <li><a href="../publications.html">Publications</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h1>X-CAM — Controlled Autonomous Monitoring</h1>
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Projects</a>
 
-    <img src="../assets/images/xcam.jpg"
-         alt="X-CAM Autonomous Surveillance Drone"
-         width="60%">
+        <header class="project-title-section">
+            <h1>X-CAM</h1>
+            <div class="project-subtitle-tag">Controlled Autonomous Monitoring UAV</div>
+        </header>
 
-    <p>
-        <strong>X-CAM</strong> is an autonomous aerial surveillance platform designed to
-        provide persistent monitoring without continuous human intervention.
-        The project addresses one of the major limitations of conventional drone-based
-        surveillance systems: limited flight endurance and the need for manual battery
-        replacement. By integrating autonomous navigation, intelligent battery management,
-        and automated charging capabilities, X-CAM can perform surveillance missions for
-        extended durations with minimal operator involvement.
-    </p>
+        <section class="project-core-grid">
+            <div class="project-main-desc">
+                <p>
+                    <strong>X-CAM</strong> is an automated aerial surveillance platform incorporating intelligent loop logic to handle self-charging operations, overcoming flight endurance restrictions.
+                </p>
+                <br>
+                <h3>Project Overview</h3>
+                <p style="color: var(--text-muted); font-size: 1rem; margin-top: 0.5rem;">
+                    The system continuously monitors its battery health while executing a predefined surveillance mission. Once the battery level falls below a safe threshold, the drone autonomously navigates back to a designated charging station, lands accurately, initiates charging, and resumes its mission after reaching the required charge level. This significantly reduces downtime and enables near-continuous operation.
+                </p>
+            </div>
+            <div class="project-image-wrapper">
+                <img src="../assets/images/xcam.jpg" alt="X-CAM Surveillance Drone">
+            </div>
+        </section>
 
-    <h2>Project Overview</h2>
+        <section class="content-block">
+            <div class="tech-split-grid">
+                <div>
+                    <h2>Problem Statement</h2>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                        Traditional surveillance drones are constrained by limited battery life and require operators to manually retrieve, recharge, and redeploy the vehicle. This process increases operational costs, reduces mission availability, and limits the practicality of drone-based surveillance in remote or long-duration applications.
+                    </p>
+                </div>
+                <div>
+                    <h2>Proposed Solution</h2>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                        X-CAM introduces a fully autonomous workflow that combines mission execution, battery monitoring, precision landing, and automated charging. The drone can make intelligent decisions regarding energy management and safely return to its charging station whenever required. Once recharged, it is capable of resuming surveillance operations without manual assistance.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <p>
-        The system continuously monitors its battery health while executing a predefined
-        surveillance mission. Once the battery level falls below a safe threshold, the drone
-        autonomously navigates back to a designated charging station, lands accurately,
-        initiates charging, and resumes its mission after reaching the required charge level.
-        This significantly reduces downtime and enables near-continuous operation.
-    </p>
+        <section class="content-block">
+            <div class="tech-split-grid">
+                <div class="tech-list-box">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Autonomous surveillance and waypoint-based navigation</li>
+                        <li>Real-time battery monitoring and decision making</li>
+                        <li>Automated return-to-home functionality</li>
+                        <li>Precision landing on charging dock</li>
+                        <li>Automated charging and mission resumption</li>
+                        <li>Reduced operator intervention for long-duration deployments</li>
+                    </ul>
+                </div>
+                <div class="tech-list-box">
+                    <h3>Technologies Used</h3>
+                    <ul>
+                        <li>Arduino-based embedded control system</li>
+                        <li>APM (ArduPilot Mega) Flight Controller</li>
+                        <li>Waypoint Navigation and Mission Planning</li>
+                        <li>Battery Management System</li>
+                        <li>Autonomous Return-to-Charging Logic</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <h2>Problem Statement</h2>
+        <section class="content-block">
+            <h2>Intellectual Property Status</h2>
+            <div class="result-highlight-box">
+                <p style="color: var(--text-muted);">
+                    Filed and published under Indian utility tracking loops for intellectual property novelty validation.
+                </p>
+                <span class="result-meta-label">Indian Patent Office Publication</span>
+                <span class="result-meta-value">Application No. 202421070313</span>
+            </div>
+        </section>
 
-    <p>
-        Traditional surveillance drones are constrained by limited battery life and require
-        operators to manually retrieve, recharge, and redeploy the vehicle. This process
-        increases operational costs, reduces mission availability, and limits the practicality
-        of drone-based surveillance in remote or long-duration applications.
-    </p>
-
-    <h2>Proposed Solution</h2>
-
-    <p>
-        X-CAM introduces a fully autonomous workflow that combines mission execution,
-        battery monitoring, precision landing, and automated charging. The drone can make
-        intelligent decisions regarding energy management and safely return to its charging
-        station whenever required. Once recharged, it is capable of resuming surveillance
-        operations without manual assistance.
-    </p>
-
-    <h2>Key Features</h2>
-
-    <ul>
-        <li>Autonomous surveillance and waypoint-based navigation</li>
-        <li>Real-time battery monitoring and decision making</li>
-        <li>Automated return-to-home functionality</li>
-        <li>Precision landing on charging dock</li>
-        <li>Automated charging and mission resumption</li>
-        <li>Reduced operator intervention for long-duration deployments</li>
-    </ul>
-
-    <h2>Technologies Used</h2>
-
-    <ul>
-        <li>Arduino-based embedded control system</li>
-        <li>APM (ArduPilot Mega) Flight Controller</li>
-        <li>Waypoint Navigation and Mission Planning</li>
-        <li>Battery Management System</li>
-        <li>Autonomous Return-to-Charging Logic</li>
-    </ul>
-
-    <h2>Results & Achievements</h2>
-
-    <p>
-        The project successfully demonstrated autonomous mission execution combined with
-        automated charging capabilities. The work led to the filing of an Indian patent,
-        highlighting the novelty and practical significance of the proposed system.
-    </p>
-
-    <p>
-        <strong>Patent Published:</strong> Application No. 202421070313
-    </p>
-
-    <h2>Project Resources</h2>
-
-    <p>
-        Explore the project repository and supporting documentation below:
-    </p>
-
-    <ul>
-        <li>
-            <a href="https://github.com/userofmeet/X-CAM" target="_blank">
-                GitHub Repository
-            </a>
-        </li>
-
-        <li>
-            <a href="https://drive.google.com/drive/folders/1Qd7iywVNaJt41thaDM8ggWqeDkg9S39_"
-               target="_blank">
-                Project Documentation & Media
-            </a>
-        </li>
-    </ul>
+        <section class="content-block" style="padding-bottom: 7rem;">
+            <h2>Project Resources</h2>
+            <div class="resource-links-container">
+                <a href="https://github.com/userofmeet/X-CAM" target="_blank" class="resource-card-link">Code Repository ↗</a>
+                <a href="https://drive.google.com/drive/folders/1Qd7iywVNaJt41thaDM8ggWqeDkg9S39_" target="_blank" class="resource-card-link">Documentation &amp; Media ↗</a>
+            </div>
+        </section>
+    </main>
 
 </body>
-
 </html>

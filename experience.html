@@ -1,117 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Experience | Meet Jain</title>
-<link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Meet Jain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        /* Spacing and layout refinements for clean separation */
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 4.5rem; /* Increased space between distinct roles */
+        }
+        .exp-text {
+            color: var(--text-muted);
+            margin-top: 0.85rem;
+            font-size: 0.98rem;
+            max-width: 850px;
+            line-height: 1.7;
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="projects/index.html">Projects</a>
-<a href="research.html">Research</a>
-<a href="experience.html">Experience</a>
-<a href="resume.html">Resume</a>
-<a href="contact.html">Contact</a>
-</nav>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MEET<span>.JAIN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects/index.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="experience.html" class="active">Experience</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<h1>Experience</h1>
+    <main class="container">
+        <header class="page-header">
+            <h1>Experience</h1>
+            <p class="page-intro">
+                A timeline of my academic research positions, traineeships, industrial internships, and engineering roles specializing in analog IC design, hardware prototyping, and instrumentation.
+            </p>
+        </header>
 
-<h2>Research Assistant</h2>
+        <section class="content-block" style="padding-bottom: 7rem;">
+            <div class="experience-timeline">
 
-<p>
-<strong>Indian Institute of Technology Bombay</strong><br>
-Mumbai, Maharashtra, India<br>
-July 2026 – August 2029
-</p>
+                <!-- Role 1: IIT Bombay -->
+                <div class="exp-item">
+                    <div class="exp-timeframe">May 2026 – Present</div>
+                    <div class="exp-details">
+                        <h3>Research Assistant</h3>
+                        <div class="exp-company">Dept. of Electrical Engineering, IIT Bombay</div>
+                        <div class="exp-meta" style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">
+                            <strong>Project:</strong> CMOS IC Design and System Prototyping for Magnetic Field Sensing | 
+                            <strong>PI:</strong> Prof. Maryam Shojaei Baghini
+                        </div>
+                        
+                       <p class="exp-text">
+                            Engaged in the system prototyping and CMOS IC design architectures for advanced magnetic field sensing technologies under the supervision of Prof. Maryam Shojaei Baghini. Developed high-precision electronic readout systems utilizing commercial Hall effect sensor ICs, focusing on frontend optimization for targeted industrial sensing applications.
+                        </p>
+                        <p class="exp-text">
+                            Researching and designing a novel CMOS signal conditioning integrated circuit (IC) explicitly optimized for magnetic sensing micro-topologies. Focused on silicon-level block implementation to interface with sensor elements while managing strict noise floor and precision constraints.
+                        </p>
+                    </div>
+                </div>
 
-<p>
-Worked on the design and development of backend electronics and data
-acquisition systems for a multi-spectral UV photometer intended for
-ozone quantification on the Martian surface. The project involved the
-architecture of low-noise analog front-end circuitry for ultra-low-current
-photodiode measurements, implementation of signal-conditioning and
-precision data-acquisition techniques, and system-level optimization for
-scientific measurements spanning a dynamic range exceeding 130 dB.
-Contributed to detector interfacing, noise analysis, electronics design,
-and performance validation under stringent measurement constraints for
-planetary exploration applications.
-</p>
+                <!-- Role 2: PRL -->
+                <div class="exp-item">
+                    <div class="exp-timeframe">Jan 2026 – Apr 2026</div>
+                    <div class="exp-details">
+                        <h3>Academic Project Trainee</h3>
+                        <div class="exp-company">Planetary Sciences Division, Physical Research Laboratory (PRL)</div>
+                        
+                        <p class="exp-text">
+                            Developed a high-precision Signal Conditioning Unit (SCU) designed for ozone quantification in a Martian UV photometer instrumentation payload. The core challenge involved optimizing analog circuit topologies and PCB layouts to isolate and resolve 0.1 nA current fluctuations riding on top of a 700 µA base photodiode current, adhering strictly to ultra-low noise floor requirements.
+                        </p>
+                        <p class="exp-text">
+                            Designed and executed end-to-end setups for diurnal solar flux characterization using a high-precision Keysight B2981A femtoammeter paired with an SG01XL-BC5 photodiode. Developed custom Processing Card and Python frameworks to process, analyze, and visualize high-resolution current-over-time data streams to calculate accurate radiation doses.
+                        </p>
+                    </div>
+                </div>
 
-<p>
-<strong>Skills:</strong> Analog Circuit Design, LTspice, Scientific
-Instrumentation, Data Acquisition Systems, Signal Conditioning,
-Electronics Prototyping.
-</p>
+                <!-- Role 3: Marshee Pet Technologies -->
+                <div class="exp-item">
+                    <div class="exp-timeframe">Apr 2025 – Jul 2025</div>
+                    <div class="exp-details">
+                        <h3>Firmware Development Intern</h3>
+                        <div class="exp-company">Marshee Pet Technologies</div>
+                        
+                        <p class="exp-text">
+                            Engineered and debugged bare-metal, register-level embedded C firmware codebases for ESP32-S3 using Espressif IDF. Architected low-level driver abstractions for critical hardware communication protocols including SPI, I2C, and UART peripherals to interface seamlessly with varied sensor suites.
+                        </p>
+                        <p class="exp-text">
+                            Optimized system-level power consumption by designing efficient low-power sleep state cycles and interrupt-driven scheduling to significantly maximize hardware field battery life. Built robust Python data acquisition dashboards for real-time telemetry rendering and automated sensor hardware calibration.
+                        </p>
+                    </div>
+                </div>
 
-<hr>
-
-
-<h2>Academic Project Trainee</h2>
-
-<p>
-<strong>Physical Research Laboratory (PRL)</strong><br>
-Ahmedabad, Gujarat, India<br>
-December 2025 – May 2026
-</p>
-
-<p>
-Worked on the design and development of backend electronics and data
-acquisition systems for a multi-spectral UV photometer intended for
-ozone quantification on the Martian surface. The project involved the
-architecture of low-noise analog front-end circuitry for ultra-low-current
-photodiode measurements, implementation of signal-conditioning and
-precision data-acquisition techniques, and system-level optimization for
-scientific measurements spanning a dynamic range exceeding 130 dB.
-Contributed to detector interfacing, noise analysis, electronics design,
-and performance validation under stringent measurement constraints for
-planetary exploration applications.
-</p>
-
-<p>
-<strong>Skills:</strong> Analog Circuit Design, LTspice, Scientific
-Instrumentation, Data Acquisition Systems, Signal Conditioning,
-Electronics Prototyping.
-</p>
-
-<hr>
-
-<h2>Firmware Developer Intern</h2>
-
-<p>
-<strong>Marshee Pet Tech</strong><br>
-Remote, India<br>
-April 2025 – July 2025
-</p>
-
-<p>
-Developed embedded firmware for ESP32-S3 based IoT pet-care devices,
-implementing BLE-assisted Wi-Fi provisioning, secure over-the-air (OTA)
-firmware updates, and cloud connectivity features. Designed and optimized
-data acquisition and processing pipelines, integrated peripheral interfaces
-and communication protocols, and improved system reliability through
-robust fault handling and power-efficient operation. Contributed to
-hardware prototyping and end-to-end product development, enabling scalable
-deployment and enhanced device uptime in production environments.
-</p>
-
-<p>
-<strong>Skills:</strong> ESP32-S3, Embedded C/C++, BLE, Wi-Fi,
-OTA Updates, IoT Systems, Firmware Development.
-</p>
-
-<hr>
-
-<h2>Summary</h2>
-
-<p>
-My experience spans scientific instrumentation, embedded systems,
-firmware development, autonomous robotics, and electronic system
-design. Through academic research projects and industry internships,
-I have worked on technologies ranging from planetary science
-instrumentation and precision analog electronics to IoT products,
-robotics, and autonomous systems.
-</p>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>

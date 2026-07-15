@@ -1,50 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Projects</title>
-<link rel="stylesheet" href="../assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Meet Jain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 
-<nav>
-<a href="../index.html">Home</a>
-<a href="index.html">Projects</a>
-<a href="../research.html">Research</a>
-<a href="../experience.html">Experience</a>
-<a href="../resume.html">Resume</a>
-<a href="../contact.html">Contact</a>
-</nav>
+    <nav>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">MEET<span>.JAIN</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" class="active">Projects</a></li>
+                <li><a href="../publications.html">Publications</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<h1>Projects</h1>
+    <main class="container">
+        <header class="page-header">
+            <h1>Projects</h1>
+            <p class="page-intro">
+                <!-- An archive of hardware engineering, autonomous systems development, and micro-architectural prototyping initiatives. -->
+                A curated collection of hardware design, autonomous robotics, and mixed-signal initiatives.
+            </p>
+        </header>
 
-<div class="project-grid">
+        <section class="content-block">
+            <div class="project-grid">
 
-<a href="bfmc.html" class="card">
-<h2>BFMC</h2>
-<p>Autonomous Vehicle Platform</p>
-</a>
+                <!-- Project 1: BFMC -->
+                <a href="bfmc.html" class="project-card">
+                    <div>
+                        <h2>BFMC</h2>
+                        <p>A 1:10 scale autonomous vehicle platform engineered with advanced multiprocessing sensor fusion arrays and real-time path planning loops.</p>
+                    </div>
+                    <div class="project-meta">Explore Project →</div>
+                </a>
 
-<a href="subex.html" class="card">
-<h2>SUB-EX</h2>
-<p>Underwater Inspection Vehicle</p>
-</a>
+                <!-- Project 2: SUB-EX -->
+                <a href="subex.html" class="project-card">
+                    <div>
+                        <h2>SUB-EX</h2>
+                        <p>An innovative submarine explorer designed for high-precision underwater structural examination and environmental tracking systems.</p>
+                    </div>
+                    <div class="project-meta">Explore Project →</div>
+                </a>
 
-<a href="anav.html" class="card">
-<h2>ANAV</h2>
-<p>Autonomous Navigation</p>
-</a>
+                <!-- Project 3: ANAV -->
+                <a href="anav.html" class="project-card">
+                    <div>
+                        <h2>ANAV</h2>
+                        <p>Autonomous localization and landing framework designed for operational stability inside challenging GPS-denied planetary simulation zones.</p>
+                    </div>
+                    <div class="project-meta">Explore Project →</div>
+                </a>
 
-<a href="braille.html" class="card">
-<h2>Braille Trainer</h2>
-<p>Assistive Learning Device</p>
-</a>
+                <!-- Project 4: Braille Trainer -->
+                <a href="braille.html" class="project-card">
+                    <div>
+                        <h2>Braille Trainer</h2>
+                        <p>An assistive technological device developed using custom tactile actuators to provide scalable, interactive learning for visually impaired individuals.</p>
+                    </div>
+                    <div class="project-meta">Explore Project →</div>
+                </a>
 
-<a href="xcam.html" class="card">
-<h2>X-CAM</h2>
-<p>Autonomous Surveillance Drone</p>
-</a>
+                <!-- Project 5: X-CAM -->
+                <a href="xcam.html" class="project-card">
+                    <div>
+                        <h2>X-CAM</h2>
+                        <p>Self-charging drone configuration designed for prolonged automated surveillance cycles utilizing dynamic power replenishment systems.</p>
+                    </div>
+                    <div class="project-meta">Explore Project →</div>
+                </a>
 
-</div>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>

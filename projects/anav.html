@@ -1,125 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANAV | Meet Jain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style.css">
 </head>
-
 <body>
 
-    <a href="index.html">← Back to Projects</a>
+    <nav>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">MEET<span>.JAIN</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" class="active">Projects</a></li>
+                <li><a href="../publications.html">Publications</a></li>
+                <li><a href="../experience.html">Experience</a></li>
+                <li><a href="../resume.html">Resume</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h1>ANAV — Autonomous Navigation and Visualization System</h1>
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Projects</a>
 
-    <img src="../assets/images/anav.jpg"
-         alt="ANAV Autonomous Navigation System for an Aerial Vehicle"
-         width="60%">
+        <header class="project-title-section">
+            <h1>ANAV</h1>
+            <div class="project-subtitle-tag">Autonomous Navigation and Visualization System</div>
+        </header>
 
-    <p>
-        <strong>ANAV</strong> is an autonomous navigation platform developed to
-        enable intelligent exploration and mapping of unknown environments.
-        The project focuses on real-time localization, mapping, and path
-        planning, allowing a robotic vehicle to navigate without prior
-        knowledge of its surroundings. By integrating computer vision and
-        simultaneous localization and mapping (SLAM) techniques, ANAV
-        creates a digital representation of the environment while
-        autonomously determining safe navigation paths.
-    </p>
+        <section class="project-core-grid">
+            <div class="project-main-desc">
+                <p>
+                    <strong>ANAV</strong> is an intelligent autonomous navigation architecture built to perform spatial localization and geometric environmental mapping within unstructured, completely unknown territories. 
+                </p>
+                <br>
+                <h3>Project Overview</h3>
+                <p style="color: var(--text-muted); font-size: 1rem; margin-top: 0.5rem;">
+                    The system continuously processes visual information from onboard sensors to estimate its position and construct a map of the surrounding environment. As the vehicle explores, it identifies navigable regions, avoids obstacles, and updates the generated map in real time. The resulting visualization provides operators with valuable situational awareness while enabling autonomous movement through previously unexplored areas.
+                </p>
+            </div>
+            <div class="project-image-wrapper">
+                <img src="../assets/images/anav.jpg" alt="ANAV Autonomous Navigation System">
+            </div>
+        </section>
 
-    <h2>Project Overview</h2>
+        <section class="content-block">
+            <div class="tech-split-grid">
+                <div>
+                    <h2>Problem Statement</h2>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                        Navigation in unknown or GPS-denied environments presents significant challenges for autonomous systems. Traditional navigation methods often rely on pre-existing maps or external positioning systems, limiting their effectiveness in dynamic and unstructured settings. There is a need for intelligent systems capable of building their own understanding of the environment while navigating safely and efficiently.
+                    </p>
+                </div>
+                <div>
+                    <h2>Proposed Solution</h2>
+                    <p style="color: var(--text-muted); margin-top: 0.5rem;">
+                        ANAV utilizes visual SLAM algorithms to simultaneously estimate vehicle position and generate an environmental map. The navigation framework combines localization, obstacle detection, and path planning modules to enable autonomous exploration. The generated maps can be visualized in real time, providing both operational insight and a foundation for future mission planning.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <p>
-        The system continuously processes visual information from onboard
-        sensors to estimate its position and construct a map of the
-        surrounding environment. As the vehicle explores, it identifies
-        navigable regions, avoids obstacles, and updates the generated map
-        in real time. The resulting visualization provides operators with
-        valuable situational awareness while enabling autonomous movement
-        through previously unexplored areas.
-    </p>
+        <section class="content-block">
+            <div class="tech-split-grid">
+                <div class="tech-list-box">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Autonomous navigation in unknown environments</li>
+                        <li>Real-time localization and mapping</li>
+                        <li>Visual SLAM-based environment reconstruction</li>
+                        <li>Obstacle detection and avoidance</li>
+                        <li>Path planning and trajectory generation</li>
+                        <li>Live environment visualization and monitoring</li>
+                    </ul>
+                </div>
+                <div class="tech-list-box">
+                    <h3>Technologies Used</h3>
+                    <ul>
+                        <li>ORB-SLAM3 Framework</li>
+                        <li>ROS (Robot Operating System)</li>
+                        <li>Computer Vision and Image Processing</li>
+                        <li>Python and C++</li>
+                        <li>Path Planning Algorithms</li>
+                        <li>Real-Time Mapping and Localization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <h2>Problem Statement</h2>
+        <section class="content-block">
+            <h2>Results &amp; Achievements</h2>
+            <div class="result-highlight-box">
+                <p style="color: var(--text-muted);">
+                    Successfully achieved full spatial loop closure and map building outputs across simulated planetary testing fields, guaranteeing robust telemetry feedback tracks.
+                </p>
+                <span class="result-meta-label">Competition Platform</span>
+                <span class="result-meta-value">ISRO Robotics Challenge (IRoC-U 2024)</span>
+            </div>
+        </section>
 
-    <p>
-        Navigation in unknown or GPS-denied environments presents significant
-        challenges for autonomous systems. Traditional navigation methods
-        often rely on pre-existing maps or external positioning systems,
-        limiting their effectiveness in dynamic and unstructured settings.
-        There is a need for intelligent systems capable of building their
-        own understanding of the environment while navigating safely and
-        efficiently.
-    </p>
-
-    <h2>Proposed Solution</h2>
-
-    <p>
-        ANAV utilizes visual SLAM algorithms to simultaneously estimate
-        vehicle position and generate an environmental map. The navigation
-        framework combines localization, obstacle detection, and path
-        planning modules to enable autonomous exploration. The generated
-        maps can be visualized in real time, providing both operational
-        insight and a foundation for future mission planning.
-    </p>
-
-    <h2>Key Features</h2>
-
-    <ul>
-        <li>Autonomous navigation in unknown environments</li>
-        <li>Real-time localization and mapping</li>
-        <li>Visual SLAM-based environment reconstruction</li>
-        <li>Obstacle detection and avoidance</li>
-        <li>Path planning and trajectory generation</li>
-        <li>Live environment visualization and monitoring</li>
-    </ul>
-
-    <h2>Technologies Used</h2>
-
-    <ul>
-        <li>ORB-SLAM3 Framework</li>
-        <li>ROS (Robot Operating System)</li>
-        <li>Computer Vision and Image Processing</li>
-        <li>Python and C++</li>
-        <li>Path Planning Algorithms</li>
-        <li>Real-Time Mapping and Localization</li>
-    </ul>
-
-    <h2>Results & Achievements</h2>
-
-    <p>
-        The project successfully demonstrated autonomous navigation and
-        environment mapping capabilities in simulated and real-world
-        scenarios. ANAV generated accurate environmental maps while
-        maintaining reliable localization performance, enabling safe and
-        efficient navigation through complex environments.
-    </p>
-
-    <p>
-    <strong>Competition:</strong> ISRO Robotics Challenge (IRoC-U 2024)
-</p>
-
-    <h2>Project Resources</h2>
-
-    <p>
-        Explore the project repository and supporting documentation below:
-    </p>
-
-    <ul>
-        <li>
-            <a href="https://github.com/userofmeet/ANAV" target="_blank">
-                GitHub Repository
-            </a>
-        </li>
-
-        <li>
-            <a href="https://drive.google.com/drive/folders/1tz0HDW0faT7zGpywFE6480FL350U2Ct4" target="_blank">
-                Project Documentation & Media
-            </a>
-        </li>
-    </ul>
+        <section class="content-block" style="padding-bottom: 7rem;">
+            <h2>Project Resources</h2>
+            <div class="resource-links-container">
+                <a href="https://github.com/userofmeet/ANAV" target="_blank" class="resource-card-link">Code Repository ↗</a>
+                <a href="https://drive.google.com/drive/folders/1tz0HDW0faT7zGpywFE6480FL350U2Ct4" target="_blank" class="resource-card-link">Documentation &amp; Media ↗</a>
+            </div>
+        </section>
+    </main>
 
 </body>
-
 </html>

@@ -1,97 +1,456 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet Jain | Portfolio</title>
-    <link rel="stylesheet" href="assets/style.css">
-</head>
+    <!-- Google Fonts for sharp, modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #161b26;
+            --accent: #3b82f6; /* Electric Blue */
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: #242b3d;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4.5rem;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 4rem 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-institution {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-muted);
+        }
+
+        .hero-avatar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            width: 280px;
+            height: 280px;
+        }
+
+        .avatar-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border: 1px dashed var(--border);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .hero-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Sections General */
+        section.content-block {
+            padding: 5rem 0;
+            border-top: 1px solid var(--border);
+        }
+
+        section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 2rem;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        /* Research Interests Grid */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .interest-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 1.75rem;
+            border-radius: 8px;
+            transition: border-color 0.2s ease;
+        }
+
+        .interest-card:hover {
+            border-color: var(--accent);
+        }
+
+        .interest-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Education Timeline */
+        .education-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .edu-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+        }
+
+        .edu-years {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .edu-details h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-spec {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-grade {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+            font-weight: 500;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.75rem;
+            }
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .cta-group {
+                justify-content: center;
+            }
+            .hero-avatar {
+                order: -1;
+            }
+            .edu-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                gap: 1.25rem;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+            .container {
+                padding: 0 1.25rem;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
 <body>
+
     <nav>
-        <a href="index.html">Home</a>
-        <a href="projects/index.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="experience.html">Experience</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MEET<span>.JAIN</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projects/index.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-
-            <div class="hero-text">
-                <h1>Meet Jain</h1>
-
-                <h2>M.Tech Research Assistant</h2>
-
-                <p>
-                    Electronic Systems · Indian Institute of Technology Bombay
-                </p>
-
-                <p>
-                    I am currently pursuing an M.Tech (Research Assistant) in
-                    Electronic Systems at IIT Bombay under the guidance of
-                    Prof. Maryam Shojaei Baghini. My work is centered around
-                    CMOS IC Design and System Prototyping for Magnetic Field
-                    Sensing, with interests spanning integrated circuits,
-                    embedded systems, and intelligent sensing technologies.
-                </p>
-
-                <a class="btn" href="projects/index.html">
-                    View Projects
-                </a>
-
-                <a class="btn" href="assets/resume.pdf">
-                    Download Resume
-                </a>
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1>Meet Jain</h1>
+                    <div class="hero-subtitle">M.Tech Research Assistant</div>
+                    <div class="hero-institution">
+                        <span>Electronic Systems</span> • <span>Indian Institute of Technology Bombay</span>
+                    </div>
+                    <p class="hero-desc">
+                        I am currently pursuing an M.Tech (Research Assistant) in Electronic Systems at IIT Bombay under the guidance of Prof. Maryam Shojaei Baghini. My work is centered around CMOS IC Design and System Prototyping for Magnetic Field Sensing, with interests spanning integrated circuits, embedded systems, and intelligent sensing technologies.
+                    </p>
+                    <div class="cta-group">
+                        <a href="projects/index.html" class="btn btn-primary">View Projects</a>
+                        <a href="assets/resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-avatar">
+                    <div class="avatar-wrapper">
+                        <img src="assets/profile.png" alt="Meet Jain">
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="hero-image">
-                <img src="assets/profile.png" alt="Meet Jain">
+        <!-- Research Interests Section -->
+        <section class="content-block">
+            <h2>Research Interests</h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <h3>Analog/Mixed-Signal VLSI design</h3>
+                </div>
+                <div class="interest-card">
+                    <h3>Precision Sensor Interfaces &amp; AFEs</h3>
+                </div>
+                <div class="interest-card">
+                    <h3>High-Precision Instrumentation</h3>
+                </div>
+                <div class="interest-card">
+                    <h3>Embedded Systems</h3>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
+        <!-- Education Section -->
+        <section class="content-block" style="padding-bottom: 7rem;">
+            <h2>Education</h2>
+            <div class="education-list">
+                
+                <div class="edu-item">
+                    <div class="edu-years">2026 – 2029</div>
+                    <div class="edu-details">
+                        <h3>Indian Institute of Technology Bombay</h3>
+                        <div class="edu-spec">M.Tech, Electronic Systems</div>
+                        <div class="edu-grade">CGPA: 0.00/10</div>
+                    </div>
+                </div>
 
-    <hr>
+                <div class="edu-item">
+                    <div class="edu-years">2022 – 2026</div>
+                    <div class="edu-details">
+                        <h3>Dharmsinh Desai University</h3>
+                        <div class="edu-spec">B.Tech, Electronics and Communication Engineering</div>
+                        <div class="edu-grade">CGPA: 9.18/10</div>
+                    </div>
+                </div>
 
-    <section>
-        <h2>Education</h2>
+                <div class="edu-item">
+                    <div class="edu-years">2022</div>
+                    <div class="edu-details">
+                        <h3>Green Valley High School</h3>
+                        <div class="edu-spec">12th Boards, CBSE</div>
+                        <div class="edu-grade">Percentage: 61.00%</div>
+                    </div>
+                </div>
 
-        <p>
-            <strong>Indian Institute of Technology Bombay</strong> | M.Tech, Electronic Systems<br>
-            2026 – 2029<br>
-            CGPA: 0.00/10
-        </p>
+                <div class="edu-item">
+                    <div class="edu-years">2020</div>
+                    <div class="edu-details">
+                        <h3>Prince AshokRaje Gaekwad School</h3>
+                        <div class="edu-spec">10th Boards, CBSE</div>
+                        <div class="edu-grade">Percentage: 89.80%</div>
+                    </div>
+                </div>
 
-        <p>
-            <strong>Dharmsinh Desai University</strong> | B.Tech, Electronics and Communication Engineering<br>
-            2022 – 2026<br>
-            CGPA: 9.18/10
-        </p>
+            </div>
+        </section>
 
-        <p>
-            <strong>Green Valley High School</strong> | 12th Boards, CBSE<br>
-            2022<br>
-            Percentage: 61.00%
-        </p>
+    </main>
 
-        <p>
-            <strong>Prince AshokRaje Gaekwad School</strong> | 10th Boards, CBSE<br>
-            2020<br>
-            Percentage: 89.80%
-        </p>
-    </section>
-
-    <hr>
-
-    <section>
-        <h2>Research Interests</h2>
-        <ul>
-            <li>Analog &amp; Mixed-Signal Integrated Circuit Design</li>
-            <li>Sensor Interface Electronics and Instrumentation</li>
-            <li>Embedded Systems</li>
-            <li>Autonomous Robotics</li>
-        </ul>
-    </section>
 </body>
 </html>
