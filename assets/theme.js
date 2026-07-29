@@ -1,23 +1,26 @@
-(function () {
-  const saved = localStorage.getItem('theme');
-  const initial = saved || 'dark';
-  document.documentElement.setAttribute('data-theme', initial);
+const toggleBtn = document.getElementById('theme-toggle');
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    updateIcon(initial);
-    btn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateIcon(next);
-    });
-  });
+// 1. Get saved theme or default to 'light'
+const savedTheme = localStorage.getItem('theme') || 'light';
 
-  function updateIcon(theme) {
-    const btn = document.getElementById('theme-toggle');
-    if (btn) btn.textContent = theme === 'light' ? '🌙' : '☀️';
-  }
-})();
+// 2. Apply initial theme to <html>
+document.documentElement.setAttribute('data-theme', savedTheme);
+updateToggleIcon(savedTheme);
+
+// 3. Handle button clicks
+toggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateToggleIcon(newTheme);
+});
+
+// Helper function to keep the button icon in sync
+function updateToggleIcon(theme) {
+    if (toggleBtn) {
+        // Show moon icon in light mode, sun icon in dark mode
+        toggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+}
